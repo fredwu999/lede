@@ -35,6 +35,11 @@ define Package/ath11k-firmware-default
   DEPENDS:=
 endef
 
+define Package/ath11k-firmware-ipq6018
+$(Package/ath11k-firmware-default)
+  TITLE:=IPQ6018 ath11k firmware
+endef
+
 define Package/ath11k-firmware-ipq8074
 $(Package/ath11k-firmware-default)
   TITLE:=IPQ8074 ath11k firmware
@@ -69,6 +74,14 @@ define Download/qcn9074-board
   HASH:=dbf0ca14aa1229eccd48f26f1026901b9718b143bd30b51b8ea67c84ba6207f1
 endef
 $(eval $(call Download,qcn9074-board))
+
+define Package/ath11k-firmware-ipq6018/install
+	$(INSTALL_DIR) $(1)/lib/firmware/IPQ6018
+	$(INSTALL_DIR) $(1)/lib/firmware/ath11k/IPQ6018/hw1.0
+	$(INSTALL_DATA) \
+		$(PKG_BUILD_DIR)/ath11k-firmware/IPQ6018/hw1.0/2.5.0.1/WLAN.HK.2.5.0.1-01208-QCAHKSWPL_SILICONZ-1/* \
+		$(1)/lib/firmware/IPQ6018/
+endef
 
 define Package/ath11k-firmware-ipq8074/install
 	$(INSTALL_DIR) $(1)/lib/firmware/IPQ8074
