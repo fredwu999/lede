@@ -99,6 +99,17 @@ define Device/qihoo_360v6
 endef
 TARGET_DEVICES += qihoo_360v6
 
+define Device/redmi_ax5-jdcloud
+	$(call Device/FitImage)
+	$(call Device/EmmcImage)
+	DEVICE_VENDOR := Redmi
+	DEVICE_MODEL := AX5 JDCloud
+	DEVICE_DTS_CONFIG := config@cp03-c1
+	SOC := ipq6000
+	DEVICE_PACKAGES := ipq-wifi-redmi_ax5-jdcloud
+endef
+TARGET_DEVICES += redmi_ax5-jdcloud
+
 define Device/xiaomi_rm1800
 	$(call Device/FitImage)
 	$(call Device/UbiFit)
@@ -111,16 +122,3 @@ define Device/xiaomi_rm1800
 	DEVICE_PACKAGES := ipq-wifi-xiaomi_rm1800
 endef
 TARGET_DEVICES += xiaomi_rm1800
-
-define Device/zn_m2
-	$(call Device/FitImage)
-	$(call Device/UbiFit)
-	DEVICE_VENDOR := ZN
-	DEVICE_MODEL := M2
-	BLOCKSIZE := 128k
-	PAGESIZE := 2048
-	DEVICE_DTS_CONFIG := config@cp03-c1
-	SOC := ipq6000
-	DEVICE_PACKAGES := ipq-wifi-zn_m2
-endef
-TARGET_DEVICES += zn_m2
