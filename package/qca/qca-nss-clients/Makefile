@@ -440,7 +440,7 @@ Linux qdisc that aids in configuring shapers in the NSS
 endef
 
 define Build/InstallDev
-  mkdir -p $(1)/usr/include/qca-nss-clients
+	$(INSTALL_DIR) $(1)/usr/include/qca-nss-clients
 	$(CP) $(PKG_BUILD_DIR)/netlink/include/* $(1)/usr/include/qca-nss-clients/
 	$(CP) $(PKG_BUILD_DIR)/exports/* $(1)/usr/include/qca-nss-clients/
 endef
