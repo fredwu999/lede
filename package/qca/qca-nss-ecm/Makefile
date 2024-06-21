@@ -32,7 +32,6 @@ define KernelPackage/qca-nss-ecm
 		   +kmod-ppp +kmod-pppoe +kmod-pptp +kmod-bonding \
 		   +PACKAGE_kmod-pppol2tp:kmod-pppol2tp \
 		   +PACKAGE_kmod-qca-mcs:kmod-qca-mcs \
-		   +PACKAGE_kmod-nat46:kmod-nat46 \
 		   +PACKAGE_kmod-vxlan:kmod-vxlan
   TITLE:=QCA NSS Enhanced Connection Manager (ECM)
   FILES:=$(PKG_BUILD_DIR)/ecm.ko
